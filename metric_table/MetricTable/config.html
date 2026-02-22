@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Metric Table - Format</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="dialog-body">
+  <div class="dialog">
+    <header class="dialog-header">
+      <div class="title">Format Metrics</div>
+      <div class="spacer"></div>
+      <button id="btnClose" class="btn btn-secondary">Close</button>
+    </header>
+
+    <div class="dialog-content">
+      <div class="grid">
+        <section class="panel">
+          <h3>Metrics</h3>
+          <div id="metricList" class="list"></div>
+          <div class="hint">Tip: Formatting is stored per measure field and persists in the workbook.</div>
+        </section>
+
+        <section class="panel">
+          <h3>Selected Metric</h3>
+          <div id="selectedMetricName" class="pill">None</div>
+
+          <h4>Metric title (row label)</h4>
+          <div class="form-row">
+            <label>Bold</label>
+            <input type="checkbox" id="tBold" />
+          </div>
+          <div class="form-row">
+            <label>Font size</label>
+            <input type="number" id="tSize" min="8" max="32" step="1" />
+          </div>
+          <div class="form-row">
+            <label>Font color</label>
+            <input type="color" id="tColor" />
+            <input type="text" id="tColorText" placeholder="#000000" />
+          </div>
+          <div class="form-row">
+            <label>Background</label>
+            <input type="color" id="tBg" />
+            <input type="text" id="tBgText" placeholder="#ffffff" />
+          </div>
+
+          <h4>Metric values (cells)</h4>
+          <div class="form-row">
+            <label>Bold</label>
+            <input type="checkbox" id="vBold" />
+          </div>
+          <div class="form-row">
+            <label>Font size</label>
+            <input type="number" id="vSize" min="8" max="32" step="1" />
+          </div>
+          <div class="form-row">
+            <label>Font color</label>
+            <input type="color" id="vColor" />
+            <input type="text" id="vColorText" placeholder="#111111" />
+          </div>
+          <div class="form-row">
+            <label>Background</label>
+            <input type="color" id="vBg" />
+            <input type="text" id="vBgText" placeholder="#ffffff" />
+          </div>
+
+          <h4>Number format</h4>
+          <div class="form-row">
+            <label>Format</label>
+            <select id="nFormat">
+              <option value="auto">Auto</option>
+              <option value="number">Number</option>
+              <option value="integer">Integer</option>
+              <option value="percent">Percent</option>
+              <option value="currency">Currency</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label>Decimals</label>
+            <input type="number" id="nDecimals" min="0" max="6" step="1" />
+          </div>
+          <div class="form-row">
+            <label>Prefix</label>
+            <input type="text" id="nPrefix" placeholder="" />
+          </div>
+          <div class="form-row">
+            <label>Suffix</label>
+            <input type="text" id="nSuffix" placeholder="" />
+          </div>
+
+          <div class="actions">
+            <button id="btnSave" class="btn">Save</button>
+            <button id="btnReset" class="btn btn-secondary">Reset metric</button>
+          </div>
+          <div id="saveStatus" class="hint"></div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tableau/extensions-api@1.15.0/dist/tableau.extensions.1.latest.js"></script>
+  <script src="./config.js"></script>
+</body>
+</html>
